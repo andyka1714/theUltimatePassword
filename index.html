@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+	<meta charset="UTF-8">
+	<title>終極密碼</title>
+	<script>
+		function guessnumber(){
+			try{
+				var x = document.getElementById("guess").value;
+				if(x=="") 		throw "請輸入數字開始猜唷～";
+				if(isNaN(x)) 	throw "輸入數字好嗎?!";
+				if(x>3377) 		throw "太大囉，猜小一點";
+				if(x<3375) 		throw "太小囉，猜大一點";
+				if(x==3376) 	throw "恭喜你答對囉!!!";
+			}catch(err){
+				var y = document.getElementById("message");
+				y.innerHTML= err ;
+			}
+			if(2877<x && x<3877){
+				y.style.color="#f00";
+			}else{
+				y.style.color="#000";
+			}
+		}
+
+		function checkCookies(){
+			if (navigator.cookieEnabled==true){
+				alert("開始玩終極密碼囉！！")
+				}else{
+				alert("不玩了哦  好難過～")
+				}
+		}
+
+	</script>
+</head>
+
+<body onload="checkCookies()">
+	<h1 class="title">終極密碼</h1>
+	<p>請輸入1～10000的數字</p>
+	<input id="guess" type="text">
+	<button type="button" onclick="guessnumber()">開始猜囉!!</button>
+	<p id="message"></p>
+</body>
+</html>
