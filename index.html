@@ -12,6 +12,7 @@
 				if(x>3377) 		throw "太大囉，猜小一點";
 				if(x<3375) 		throw "太小囉，猜大一點";
 				if(x==3376) 	throw "恭喜你答對囉!!!";
+				if(x>10000) 	throw "別鬧了～最多10000";
 			}catch(err){
 				var y = document.getElementById("message");
 				y.innerHTML= err ;
@@ -33,16 +34,39 @@
 </head>
 
 <body onload="checkCookies()">
-	<h1 class="title">終極密碼</h1>
-	<p>請輸入1～10000的數字</p>
-	<input id="guess" type="text">
-	<button type="button" onclick="guessnumber()">開始猜囉!!</button>
-	<p id="message"></p>
+	<div class="guessPassword">
+		<h1 class="title">終極密碼</h1>
+		<p>請輸入1～10000的數字</p>
+		<input id="guess" type="text">
+		<button type="button" onclick="guessnumber()">開始猜囉!!</button>
+		<p id="message"></p>
+	</div>
 </body>
 <style>
-	
-body{
-	background: white
+.guessPassword{
+	width: 170px;
+	text-align: center;
+	background-color: #CCEEFF;
+}
+
+h1{
+	color: white;
+	-webkit-text-stroke: 1px red;
+}
+input{
+	width: 150px;
+	height: 25px;
+	border-radius: 5px;
+	border: 0px;
+	padding-left: 5px;
+	font-size: 20px;
+}
+
+button{
+	margin: 10px 0;
+	font-size: 16px;
+	border-radius: 5px;
+	cursor: pointer;
 }
 </style>
 </html>
